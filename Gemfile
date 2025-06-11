@@ -2,11 +2,11 @@ source "https://rubygems.org"
 
 ruby "3.3.4"
 
-# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '~> 7.0.0'
+# Use Rails 8
+gem 'rails', '~> 8.0.0'
 
 # rakeが認識されないので追加
-gem 'rake', '~> 13.0'
+gem 'rake', '~> 13.1'
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"

@@ -1,50 +1,33 @@
-# React + TypeScript + Vite
+# Frontend
+フロントエンドは[pnpm](https://pnpm.io/ja/)を使用してパッケージ管理をしています.
+- npmやyarnと比較して早い
+- 依存関係の管理が独自であり、ディスク容量が節約できて軽い
+詳しくは[こちら](https://pnpm.io/ja/motivation)を見てみてください
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## パッケージを追加したい場合
+```bash
+pnpm add <追加したいパッケージ名>
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## パッケージを削除したい場合
+```bash
+pnpm remove <パッケージ名>
+```
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## パッケージをアップデートしたい場合
+```bash
+pnpm up <パッケージ名>@<バージョン> # 特定のパッケージをアップデートする場合
+pnpm up # 全てのパッケージを依存関係を維持してアップデートする場合
+pnpm up --latest # 依存関係を無視して全てのライブラリを最新版にする場合
+```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+## ローカルで立ち上げ・Lintをする場合
+- 立ち上げ(立ち上がると`localhost:8080`でアクセス可能です)
+```bash
+pnpm dev
+```
+
+- Lint(Typescriptの構文エラーを見つけてくれます)
+```bash
+pnpm lint
 ```
