@@ -1,24 +1,27 @@
 ## 環境構築
 
+### 必要な物
+このリポジトリの実行には
+- Docker
+- npm
+- pnpm
+のインストールが必要です。
+pnpmのインストールは[公式ドキュメント](https://pnpm.io/ja/installation)を参照してください
+
 ### クローン
+forkした場合はリポジトリのリンクやディレクトリ名を変えてください
 ```bash
 cd 作業ディレクトリ
 git clone git@github.com:Gild-shogi/TOKIUM-summer-intern.git
 cd TOKIUM-summer-intern
 ```
 
-### 各種セットアップ
-```bash
-docker compose run --rm front yarn install
-docker compose run app rails db:setup
-docker compose run app rails db:migrate
-```
-
-### サーバー起動
+### Start server
 ```bash
 docker compose build
 docker compose up -d
 ```
 
+
 ### ローカルサーバーへのアクセス
-すべてが正常に動作している場合、ブラウザで http://localhost:3000 にアクセスして、アプリケーションが期待通りに動作しているか確認
+すべてが正常に動作している場合、ブラウザで http://localhost:3000 , http://localhost:8080 にアクセスして、アプリケーションが期待通りに動作しているか確認してください

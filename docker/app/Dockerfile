@@ -1,5 +1,5 @@
 FROM ruby:3.3.4
-ARG RUBYGEMS_VERSION=3.3.23
+ARG RUBYGEMS_VERSION=3.5.3
 
 # install nodejs
 RUN curl -sL https://deb.nodesource.com/setup_20.x | bash - && \

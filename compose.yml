@@ -1,6 +1,6 @@
 services:
   db:
-    image: postgres:latest
+    image: postgres:16
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
     environment:
@@ -70,10 +70,7 @@ services:
     build:
       context: .
       dockerfile: docker/front/Dockerfile
-    command: >
-      sh -c
-      "yarn install &&
-      yarn dev"
+
     volumes:
       - ./front:/app
       - node_modules:/app/node_modules
@@ -83,6 +80,7 @@ services:
       - app
     ports:
       - "8080:8080"
+    command: sh -c "pnpm install && pnpm dev"
 
 volumes:
   node_modules:
